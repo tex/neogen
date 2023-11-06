@@ -2,6 +2,7 @@ local c_config = require("neogen.configurations.c")
 local extractors = require("neogen.utilities.extractors")
 local nodes_utils = require("neogen.utilities.nodes")
 local i = require("neogen.types.template").item
+local template = require("neogen.template")
 
 local cpp_config = {
     parent = {
@@ -23,6 +24,7 @@ local cpp_config = {
             },
         },
     },
+    template = template:add_default_annotation("doxygen"):add_annotation("doxygen_cpp"),
 }
 
 cpp_config = vim.tbl_deep_extend("force", c_config, cpp_config)
